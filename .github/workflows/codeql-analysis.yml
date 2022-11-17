@@ -1,8 +1,10 @@
 name: "CodeQL"
 
 on:
-  - push
-  - workflow_dispatch
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 env:
   MAVEN_OPTS: "-Xmx2G -XX:+ExitOnOutOfMemoryError -Dmaven.wagon.rto=60000 -Dmaven.wagon.httpconnectionManager.ttlSeconds=25 -Dmaven.wagon.http.retryHandler.count=3"
